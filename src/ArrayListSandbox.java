@@ -8,7 +8,7 @@ public class ArrayListSandbox {
     public static void main(String args[])
     {
         /*
-         * ArrayList
+         * ArrayList, stores objects in an array that can be accessed by index
          */
         List one = new ArrayList();
 
