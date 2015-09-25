@@ -14,7 +14,15 @@ public class ArrayListSandbox {
 
         one.add("element1");
         one.add(4);
+        one.add(45);
+        one.add(44);
+        one.add(43);
+        one.add(42);
+        one.add(41);
+
 
         System.out.println(one);
+
+        System.out.println(one.get(3));
     }
 }
