@@ -9,6 +9,8 @@ public class ArrayListSandbox {
     {
         /*
          * ArrayList, stores objects in an array that can be accessed by index
+         * in order to access an element in a ArrayList use the get function and the
+         * index of the item you would like to access
          */
         List one = new ArrayList();
 
