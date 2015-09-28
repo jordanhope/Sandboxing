@@ -7,8 +7,10 @@ import java.util.Set;
 public class HashSetSandbox {
     public static void main(String args[]) {
         /* use a hashset to store elements when order does not matter and when
-         * you do not want duplicates in your set of data
+         * you do not want duplicates in your set of data.
          */
+
+        //create new HashSet
         Set set = new HashSet();
 
         String element = "element 1";
@@ -43,7 +45,7 @@ public class HashSetSandbox {
         setB.add("Hello");
 
         System.out.println(setB);
-
+        //to remove an element from a set
         setB.remove("3");
 
         System.out.println(setB);

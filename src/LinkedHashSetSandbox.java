@@ -8,8 +8,8 @@ public class LinkedHashSetSandbox {
     public static void main(String args[])
     {
         /*maintains a list of entries in the set, in the order in which they were inserted.
-        hybrid of a hash table and a linked list. does not accept duplicates
-        */
+         * hybrid of a hash table and a linked list. does not accept duplicates
+         */
         Set lhSet = new LinkedHashSet();
 
 
