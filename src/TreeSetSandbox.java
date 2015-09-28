@@ -14,6 +14,8 @@ public class TreeSetSandbox {
          */
 
         try {
+
+//            creates a new TreeSet
         Set set = new TreeSet();
 
         set.add("element");
