@@ -9,6 +9,9 @@ public class CarBean implements Serializable {
     private String color;
     private String make;
 
+    public CarBean() {
+    }
+
     public CarBean(int year, String model, String color, String make) {
         this.year = year;
         this.model = model;

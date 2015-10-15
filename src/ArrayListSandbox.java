@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Created by JordanHope on 9/23/2015.
@@ -12,7 +12,9 @@ public class ArrayListSandbox {
          * in order to access an element in a ArrayList use the get function and the
          * index of the item you would like to access
          */
-        List one = new ArrayList();
+        ArrayList one = new ArrayList();
+
+        CarBean car  = new CarBean(1987, "Accord", "blue", "Honda");
 
         one.add("element1");
         one.add(4);
@@ -21,10 +23,17 @@ public class ArrayListSandbox {
         one.add(43);
         one.add(42);
         one.add(41);
-
+        one.add(car);
+        one.add(car.getMake());
+        one.add(car.getModel());
+        one.add(car.getYear());
+        one.add(car.getColor());
+        one.add(null);
 
         System.out.println(one);
 
         System.out.println(one.get(3));
+
+        System.out.println(one.get(7));
     }
 }
