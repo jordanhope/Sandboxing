@@ -12,6 +12,8 @@ public class ArrayListSandbox {
          * in order to access an element in a ArrayList use the get function and the
          * index of the item you would like to access
          */
+
+        System.out.println("*****HAPPY PATHS*****");
         ArrayList happy = new ArrayList();
 
         CarBean car  = new CarBean(1987, "Accord", "blue", "Honda");
@@ -49,24 +51,25 @@ public class ArrayListSandbox {
         bean.remove(3);
         System.out.println(bean);
 
-        //clears an arrayList
-        bean.clear();
-        System.out.println(bean);
-
         //add all can add another collection to an array list.
         bean.addAll(happy);
         System.out.println(bean);
+
+        System.out.println("The element in index 2 is: " + bean.get(2));
+
+        System.out.println("Contains blue: " + bean.contains("blue"));
+
+        System.out.println("blue is stored in index: " + bean.indexOf("blue"));
 
         //removes all elements in the array list
         bean.removeAll(bean);
         System.out.println(bean);
 
-
         /**************************************************************
          * NASTY PATHS
          **************************************************************/
 
-        System.out.println("\n\n******NASTY PATHS******\n\n");
+        System.out.println("******NASTY PATHS******");
 
         ArrayList nasty = new ArrayList(3);
 
@@ -75,7 +78,8 @@ public class ArrayListSandbox {
         nasty.add(3);
         nasty.add(4);
 
-        System.out.println("This is arrayList nasty before I have done anything to it\n" + nasty + "\n");
+        System.out.println("This is arrayList nasty before I have done anything to it");
+        System.out.println(nasty);
 
         /***************************************************************
          * Add an element to an index that is out of current bounds
@@ -117,13 +121,26 @@ public class ArrayListSandbox {
          * Removing elements that don't exist
          * Index out of bounds exception
          * ***********************************/
-        System.out.println("\nRemoving an element that is out of bounds");
+        System.out.println("Removing an element that is out of bounds");
         try {
             nasty.remove(5);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+        System.out.println("using get on an index that is out of bounds");
+        try {
+            System.out.println("The element in index 15 is: " + nasty.get(15));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Getting the index of an element that does not exist");
+        try {
+            System.out.println("The index of NANCY is: " + nasty.indexOf("Nancy"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }
