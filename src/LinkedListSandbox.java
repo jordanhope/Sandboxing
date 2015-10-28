@@ -122,5 +122,56 @@ public class LinkedListSandbox {
         /*****************************
         * NASTY PATHS
         * ****************************/
+
+
+        System.out.println("Before any nasty things");
+        System.out.println(car);
+
+        System.out.println("*****NASTY PATHS*****");
+        System.out.println();
+
+        System.out.println("Adding element to index that is out of bounds");
+        try {
+            car.add(10, "out of bounds");
+            System.out.println(car);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Can't add an element using an index out of bounds");
+        }
+
+        System.out.println("Adding an element that is null");
+        try {
+            car.add(null);
+            System.out.println(car);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Cannot add a null element");
+        }
+
+        System.out.println("Removing an element that does not exist");
+        try {
+            car.remove("Nancy");
+            System.out.println(car);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Removing an element from an index that does not exist");
+        try {
+            car.remove(7);
+            System.out.println(car);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Cannot remove an element from an index that is out of bounds");
+        }
+
+        System.out.println("Add an element trying to use a negative index");
+        try {
+            car.add(-1, "HONDA");
+            System.out.println(car);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Cannot add an element using a negative index");
+        }
     }
 }
