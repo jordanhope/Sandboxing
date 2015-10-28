@@ -92,6 +92,7 @@ public class ArrayListSandbox {
             System.out.println(nasty);
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Can't do this");
         }
 
         /***********************************
@@ -126,6 +127,7 @@ public class ArrayListSandbox {
             nasty.remove(5);
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Can't remove an element that is out of bounds");
         }
 
         System.out.println("using get on an index that is out of bounds");
@@ -133,6 +135,7 @@ public class ArrayListSandbox {
             System.out.println("The element in index 15 is: " + nasty.get(15));
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Can't do that");
         }
 
         System.out.println("Getting the index of an element that does not exist");
