@@ -1,12 +1,13 @@
-import java.awt.*;
-import java.util.Comparator;
-import java.util.TreeSet;
-
 /**
- * Created by JordanHope on 9/22/2015.
+ * Created by JordanHope on 10/26/2015.
  */
+    import java.awt.*;
+    import java.util.Comparator;
+    import java.util.TreeSet;
+
 public class TreeSetSandbox {
-    public static void main(String args[]) {
+
+        public static void main(String args[]) {
         /*
          * TreeSet will order elements in the set, does not accept duplicates.
          * TreeSet has to either work with the same data type or has to be passed a
@@ -15,119 +16,120 @@ public class TreeSetSandbox {
          */
 
 
-        /*******************************************
-         * HAPPY PATHS
-         *******************************************/
+            /*******************************************
+             * HAPPY PATHS
+             *******************************************/
 
 
-        System.out.println("********HAPPY PATHS********\n");
+            System.out.println("********HAPPY PATHS********\n");
 
-        TreeSet set = new TreeSet();
+            TreeSet set = new TreeSet();
 
-        set.add("element");
-        set.add("Is");
-        set.add("My");
-        set.add("2.1");
-        set.add("3");
-        set.add("a");
+            set.add("element");
+            set.add("Is");
+            set.add("My");
+            set.add("2.1");
+            set.add("3");
+            set.add("a");
 
-        System.out.println("TreeSet of strings");
-        System.out.println(set);
+            System.out.println("TreeSet of strings");
+            System.out.println(set);
 
 
-        TreeSet setB = new TreeSet();
+            TreeSet setB = new TreeSet();
 
-        setB.add(1);
-        setB.add(5);
-        setB.add(3);
-        setB.add(2);
-        setB.add(4);
+            setB.add(1);
+            setB.add(5);
+            setB.add(3);
+            setB.add(2);
+            setB.add(4);
 
-        System.out.println("TreeSet of ints");
-        System.out.println(setB);
+            System.out.println("TreeSet of ints");
+            System.out.println(setB);
 
-        TreeSet setC = new TreeSet();
+            TreeSet setC = new TreeSet();
 
-        int a = 1;
-        int b = 2;
-        int c = 250000000;
-        int d = 3;
-        int e = 99999999;
+            int a = 1;
+            int b = 2;
+            int c = 250000000;
+            int d = 3;
+            int e = 99999999;
 
-        setC.add(a);
-        setC.add(b);
-        setC.add(c);
-        setC.add(d);
-        setC.add(e);
-        System.out.println(setC);
+            setC.add(a);
+            setC.add(b);
+            setC.add(c);
+            setC.add(d);
+            setC.add(e);
+            System.out.println(setC);
 
-        setC.remove(a);
-        System.out.println("Removing an element");
-        System.out.println(setC);
+            setC.remove(a);
+            System.out.println("Removing an element");
+            System.out.println(setC);
 
-        System.out.println("Adding the two TreeSets of ints together using addAll method");
-        setC.addAll(setB);
-        System.out.println(setC);
+            System.out.println("Adding the two TreeSets of ints together using addAll method");
+            setC.addAll(setB);
+            System.out.println(setC);
 
-        System.out.println("Clearing a TreeSet using clear method");
-        setB.clear();
-        System.out.println(setB);
+            System.out.println("Clearing a TreeSet using clear method");
+            setB.clear();
+            System.out.println(setB);
 
-        /*********************
-         * NASTY PATHS
-         **********************/
-        System.out.println("\n\n *******NASTY PATHS*******\n");
+            /*********************
+             * NASTY PATHS
+             **********************/
+            System.out.println("\n\n *******NASTY PATHS*******\n");
 
-        try {
-            CarBean car = new CarBean(2015, "TT", "silver", "Audi");
+            try {
+                CarBean car = new CarBean(2015, "TT", "silver", "Audi");
 
-            TreeSet carSet = new TreeSet();
+                TreeSet carSet = new TreeSet();
 
-            carSet.add(car);
+                carSet.add(car);
         /*carSet.add(car.getModel());
         carSet.add(car.getMake());
         carSet.add(car.getColor());
         carSet.add(car.getYear());*/
 
-            System.out.println(carSet);
-        } catch (Exception e1) {
-            e1.printStackTrace();
-            System.out.println("Adding a CarBean to a TreeSet without a comparator cannot be done");
-            System.out.println();
-        }
+                System.out.println(carSet);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+                System.out.println("Adding a CarBean to a TreeSet without a comparator cannot be done");
+                System.out.println();
+            }
 
-        TreeSet nasty = new TreeSet();
-        nasty.addAll(setC);
+            TreeSet nasty = new TreeSet();
+            nasty.addAll(setC);
 
-        System.out.println("Before anything nasty is done");
-        System.out.println(nasty);
-
-        try {
-            nasty.add(null);
-            System.out.println("Adding a null to the TreeSet");
+            System.out.println("Before anything nasty is done");
             System.out.println(nasty);
-        } catch (Exception e1) {
-            e1.printStackTrace();
-            System.out.println("Null cannot be added as an element in a TreeSet, Null pointer exception");
+
+            try {
+                nasty.add(null);
+                System.out.println("Adding a null to the TreeSet");
+                System.out.println(nasty);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+                System.out.println("Null cannot be added as an element in a TreeSet, Null pointer exception");
+            }
+
+            try {
+                nasty.remove(6);
+                System.out.println("Remove an element that does not exist");
+                System.out.println(nasty);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+                System.out.println("You can not remove an element that does not exist");
+            }
+
+            try {
+                nasty.add(1);
+                System.out.println("Adding an element that already exists");
+                System.out.println(nasty);
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
+
+
         }
-
-        try {
-            nasty.remove(6);
-            System.out.println("Remove an element that does not exist");
-            System.out.println(nasty);
-        } catch (Exception e1) {
-            e1.printStackTrace();
-            System.out.println("You can not remove an element that does not exist");
-        }
-
-        try {
-            nasty.add(1);
-            System.out.println("Adding an element that already exists");
-            System.out.println(nasty);
-        } catch (Exception e1) {
-            e1.printStackTrace();
-        }
-
-
     }
-}
+
