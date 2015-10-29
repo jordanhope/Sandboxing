@@ -76,6 +76,14 @@ public class HashMapSandbox {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        try {
+            System.out.println(map.get(null));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        //remove with null, removeAll
+
 
     }
 }
